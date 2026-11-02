@@ -66,7 +66,7 @@
       width: 100%;
       max-width: 1140px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     .container-narrow {
@@ -123,10 +123,10 @@
       background: var(--brand-cta);
       color: #FFFFFF;
       font-family: var(--font-heading);
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-size: clamp(0.95rem, 3.2vw, 1.18rem);
       font-weight: 800;
       text-decoration: none;
-      padding: 18px 36px;
+      padding: 14px 24px;
       border-radius: 12px;
       box-shadow: 0 6px 24px var(--brand-cta-glow);
       transition: all 0.25s ease;
@@ -134,7 +134,8 @@
       border: none;
       text-align: center;
       width: 100%;
-      max-width: 520px;
+      max-width: 480px;
+      box-sizing: border-box;
     }
 
     .btn-cta:hover {
@@ -149,6 +150,8 @@
 
     /* SECTION 1: MARQUEE BAR */
     .top-announcement-bar {
+      width: 100%;
+      max-width: 100vw;
       background: var(--brand-primary);
       color: #FFFFFF;
       font-size: 0.85rem;
@@ -176,40 +179,53 @@
 
     /* SECTION 2: HERO SECTION */
     .hero {
-      padding: 50px 0 60px;
+      padding: 28px 0 38px;
       text-align: center;
       position: relative;
     }
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 6px;
       background: #FFFFFF;
       border: 1px solid var(--brand-lavender-border);
-      padding: 6px 18px;
+      padding: 5px 14px;
       border-radius: 50px;
-      font-size: 0.85rem;
+      font-size: clamp(0.68rem, 2.4vw, 0.8rem);
       font-weight: 700;
       color: var(--brand-primary);
-      margin-bottom: 20px;
+      margin-bottom: 14px;
+      max-width: 95%;
       box-shadow: var(--shadow-sm);
+      line-height: 1.3;
+      text-align: center;
+      box-sizing: border-box;
     }
     .hero-title {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      max-width: 960px;
-      margin: 0 auto 20px;
+      font-size: clamp(1.3rem, 4.8vw, 2.7rem);
+      text-wrap: balance;
+      max-width: 900px;
+      margin: 0 auto 14px;
+      line-height: 1.22;
+      letter-spacing: -0.02em;
       color: var(--text-main);
+      padding: 0 4px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     .hero-title .highlight {
       color: var(--brand-primary);
       position: relative;
-      display: inline-block;
+      display: inline;
     }
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+      font-size: clamp(0.9rem, 2.4vw, 1.15rem);
       color: var(--text-muted);
-      max-width: 780px;
-      margin: 0 auto 30px;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+      padding: 0 4px;
     }
     .hero-mockup-wrapper {
       max-width: 960px;
@@ -599,7 +615,7 @@
     /* SECTION 12: WHATSAPP TESTIMONIALS (VERTICAL PHONES) */
     .whatsapp-section {
       padding: 80px 0;
-      background: #F4F6F8;
+      background: var(--bg-page);
     }
     .whatsapp-grid {
       display: grid;
@@ -1016,6 +1032,176 @@
       color: #10B981;
       font-weight: 600;
     }
+
+    /* =========================================================================
+       SECTION 6B: 3-ROW CONTINUOUS BIDIRECTIONAL MARQUEE (CANONICAL)
+       ========================================================================= */
+    .marquee-gallery-section {
+      padding: 60px 0;
+      background: var(--bg-card);
+      overflow: hidden;
+      width: 100%;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .three-row-marquee {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .marquee-row {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      user-select: none;
+    }
+    .marquee-row-track {
+      display: flex;
+      gap: 14px;
+      width: max-content;
+      will-change: transform;
+    }
+    .marquee-row-left .marquee-row-track {
+      animation: marquee-scroll-left 38s linear infinite;
+    }
+    .marquee-row-right .marquee-row-track {
+      animation: marquee-scroll-right 38s linear infinite;
+    }
+    .marquee-row:hover .marquee-row-track {
+      animation-play-state: paused;
+    }
+    @keyframes marquee-scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-scroll-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .sheet-card {
+      flex: 0 0 170px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 8px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sheet-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.15);
+    }
+    .sheet-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      object-fit: cover;
+    }
+    .sheet-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 6px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+    @media (max-width: 640px) {
+      .sheet-card {
+        flex: 0 0 135px;
+        padding: 6px;
+      }
+      .sheet-label {
+        font-size: 0.68rem;
+      }
+    }
+
+    /* =========================================================================
+       ELITE MOBILE EXCELLENCE (375px - 414px) CALIBRATIONS
+       ========================================================================= */
+    @media (max-width: 640px) {
+      .curriculum-nav {
+        display: flex;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 4px 4px 10px;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        width: 100%;
+      }
+      .curriculum-nav::-webkit-scrollbar { display: none; }
+      .curriculum-tab-btn {
+        flex: 0 0 auto;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+
+      .showcase-nav {
+        display: flex;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 4px 4px 10px;
+        gap: 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        width: 100%;
+      }
+      .showcase-nav::-webkit-scrollbar { display: none; }
+      .showcase-btn {
+        flex: 0 0 auto;
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+
+      .sticky-bottom-bar {
+        padding: 10px 14px;
+      }
+      .sticky-content {
+        gap: 10px;
+      }
+      .sticky-sub {
+        display: none;
+      }
+      .sticky-title {
+        font-size: 0.85rem;
+        line-height: 1.2;
+      }
+      .sticky-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+
+      .live-toast {
+        bottom: 72px;
+        left: 12px;
+        right: 12px;
+        max-width: calc(100% - 24px);
+        padding: 10px 12px;
+      }
+      .toast-avatar {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+      }
+
+      .action-card {
+        flex: 0 0 220px;
+        height: 165px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1045,7 +1231,7 @@
   <header class="hero">
     <div class="container">
       <div class="hero-badge">
-        <span>🇲🇽</span> THE #1 BRAIN-BRANCHING SPANISH METHOD IN THE USA
+        <span>⚡</span> #1 VISUAL SPANISH METHOD IN THE USA
       </div>
 
       <h1 class="hero-title">
@@ -1377,6 +1563,7 @@
         <h2 class="section-title">How Visual Spanish Compares</h2>
       </div>
 
+      <div style="font-size: 0.8rem; color: var(--text-light); text-align: right; margin-bottom: 8px;">👉 <em>Swipe horizontally to compare</em></div>
       <div class="comp-table-wrap">
         <table class="comp-table">
           <thead>
@@ -1693,6 +1880,10 @@
             <p style="font-size: 0.8rem; color: #10B981; font-weight: 700;">70% OFF Launch Discount Applied</p>
           </div>
 
+          <div style="text-align: center; margin: 18px 0;">
+            <img src="assets/mockup-plan-premium.webp" alt="Complete Visual Spanish Mastery 300 Mindmaps Bundle" width="280" height="280" loading="lazy" decoding="async" style="border-radius: 14px; max-width: 100%; height: auto; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);">
+          </div>
+
           <ul class="pricing-bullets">
             <li><span>✔</span> <strong>Complete 300 Visual Mindmaps</strong> (A1 to B2)</li>
             <li><span>✔</span> <strong>Master Verb Navigator</strong> (All Past & Future Tenses)</li>
@@ -1939,13 +2130,13 @@
 
     // 5. Live Purchase Toast Rotation
     const recentBuyers = [
-      { name: "Dave T. (San Antonio, TX)", initials: "DT", pkg: "Complete Mastery Kit", time: "2 minutes ago" },
-      { name: "Sarah L. (Denver, CO)", initials: "SL", pkg: "Complete Mastery Kit + Audio", time: "4 minutes ago" },
-      { name: "Robert M. (San Diego, CA)", initials: "RM", pkg: "Complete Mastery Kit", time: "7 minutes ago" },
-      { name: "Mark W. (Phoenix, AZ)", initials: "MW", pkg: "Ultimate All-in-One Bundle", time: "11 minutes ago" },
-      { name: "Lisa R. (Miami, FL)", initials: "LR", pkg: "Complete Mastery Kit", time: "15 minutes ago" },
-      { name: "Carlos G. (Austin, TX)", initials: "CG", pkg: "Complete Mastery Kit", time: "18 minutes ago" },
-      { name: "Jennifer K. (Chicago, IL)", initials: "JK", pkg: "Starter Fast-Track", time: "22 minutes ago" }
+      { name: "Dave T. (San Antonio, TX)", photo: "assets/avatar-dave.webp", pkg: "Complete Mastery Kit", time: "2 minutes ago" },
+      { name: "Sarah L. (Denver, CO)", photo: "assets/avatar-sarah.webp", pkg: "Complete Mastery Kit + Audio", time: "4 minutes ago" },
+      { name: "Robert M. (San Diego, CA)", photo: "assets/avatar-dave.webp", pkg: "Complete Mastery Kit", time: "7 minutes ago" },
+      { name: "Mark W. (Phoenix, AZ)", photo: "assets/avatar-mark.webp", pkg: "Ultimate All-in-One Bundle", time: "11 minutes ago" },
+      { name: "Lisa R. (Miami, FL)", photo: "assets/avatar-lisa.webp", pkg: "Complete Mastery Kit", time: "15 minutes ago" },
+      { name: "Carlos G. (Austin, TX)", photo: "assets/avatar-mark.webp", pkg: "Complete Mastery Kit", time: "18 minutes ago" },
+      { name: "Jennifer K. (Chicago, IL)", photo: "assets/avatar-lisa.webp", pkg: "Starter Fast-Track", time: "22 minutes ago" }
     ];
 
     let buyerIndex = 0;
@@ -1958,7 +2149,7 @@
     let remainingStock = 9;
     function showNextToast() {
       const buyer = recentBuyers[buyerIndex];
-      toastAvatar.textContent = buyer.initials;
+      toastAvatar.innerHTML = `<img src="${buyer.photo}" alt="${buyer.name}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
       toastName.textContent = buyer.name;
       toastDesc.innerHTML = `just ordered the <strong>${buyer.pkg}</strong>`;
       toastTime.innerHTML = `✓ Verified Student · ${buyer.time} · <span style="color: #DC2626; font-weight: 700;">🔥 Only ${remainingStock} launch kits left</span>`;
