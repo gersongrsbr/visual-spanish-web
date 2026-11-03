@@ -596,9 +596,39 @@
     .bonus-card {
       background: var(--bg-page);
       border-radius: 16px;
-      padding: 28px;
+      padding: 24px;
       border: 2px dashed var(--brand-lavender-border);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .bonus-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .bonus-img-wrap {
+      width: 100%;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 14px 0 16px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(245, 158, 11, 0.05));
+      overflow: hidden;
+    }
+    .bonus-mockup-img {
+      max-width: 90%;
+      max-height: 175px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(30, 11, 54, 0.16));
+      transition: transform 0.3s ease;
+    }
+    .bonus-card:hover .bonus-mockup-img {
+      transform: scale(1.04);
     }
     .bonus-pill {
       position: absolute;
@@ -610,6 +640,7 @@
       font-weight: 800;
       padding: 4px 12px;
       border-radius: 20px;
+      z-index: 2;
     }
 
     /* SECTION 12: WHATSAPP TESTIMONIALS (VERTICAL PHONES) */
@@ -1857,35 +1888,45 @@
             <div class="bonus-grid">
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #1</span>
-          <div style="font-size: 2.2rem; margin: 12px 0 8px;">✈️</div>
+          <div class="bonus-img-wrap">
+            <img src="assets/bonus-travel-cheatsheet.webp" alt="The Pocket Spanish Travel Cheat Sheet 3D Mockup" class="bonus-mockup-img" width="300" height="200" loading="lazy" decoding="async">
+          </div>
           <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">The Pocket Spanish Travel Cheat Sheet</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Printable credit-card sized cheat sheet for your passport wallet. Essential phrases for airport, taxi, and hotel check-in. ($19 Value)</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Printable credit-card sized folding cheat sheet for your passport wallet. Essential phrases for airport, taxi, and hotel check-in. ($19 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #2</span>
-          <div style="font-size: 2.2rem; margin: 12px 0 8px;">⚠️</div>
+          <div class="bonus-img-wrap">
+            <img src="assets/bonus-false-friends.webp" alt="The 50 Most Dangerous False Friends 3D Mockup" class="bonus-mockup-img" width="300" height="200" loading="lazy" decoding="async">
+          </div>
           <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">The 50 Most Dangerous False Friends</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Never say you are "embarazada" (pregnant) when you mean embarrassed. Avoid humiliating slip-ups with native precision. ($17 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #3</span>
-          <div style="font-size: 2.2rem; margin: 12px 0 8px;">🎙️</div>
+          <div class="bonus-img-wrap">
+            <img src="assets/bonus-rolling-rr-audio.webp" alt="Native Rolling RR & Accent Audio Guide 3D Mockup" class="bonus-mockup-img" width="300" height="200" loading="lazy" decoding="async">
+          </div>
           <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">Native Rolling 'RR' & Accent Audio Guide</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Mouth-position diagrams and phonetic drills to master the Spanish rolled 'R' and sound crisp and natural. ($24 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #4</span>
-          <div style="font-size: 2.2rem; margin: 12px 0 8px;">🏗️</div>
+          <div class="bonus-img-wrap">
+            <img src="assets/bonus-workplace-spanish.webp" alt="Job Site & Everyday Workplace Spanish 3D Mockup" class="bonus-mockup-img" width="300" height="200" loading="lazy" decoding="async">
+          </div>
           <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">Job Site & Everyday Workplace Spanish</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Direct commands, safety protocols, and daily workplace dialogue for supervisors, contractors, and managers. ($29 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #5</span>
-          <div style="font-size: 2.2rem; margin: 12px 0 8px;">♾️</div>
+          <div class="bonus-img-wrap">
+            <img src="assets/bonus-lifetime-vip.webp" alt="Lifetime Access & VIP Community Pass 3D Mockup" class="bonus-mockup-img" width="300" height="200" loading="lazy" decoding="async">
+          </div>
           <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">Lifetime Access & Free Updates</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Never pay a monthly subscription. Any new visual mindmaps added to the collection are yours free forever. ($47 Value)</p>
         </div>
@@ -2320,6 +2361,36 @@
       showNextToast();
       setInterval(showNextToast, 11000);
     }, 4000);
+
+    // 6. 1-Click Mobile Upsell Modal Controls
+    window.openUpsellModal = function(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      const modal = document.getElementById('upsell-modal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      if (typeof window.propagateTrackingToButtons === 'function') {
+        window.propagateTrackingToButtons();
+      }
+    };
+
+    window.closeUpsellModal = function(stayOnPage) {
+      const modal = document.getElementById('upsell-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.handleModalOverlayClick = function(event) {
+      if (event.target && event.target.id === 'upsell-modal') {
+        window.closeUpsellModal(true);
+      }
+    };
   </script>
   <!-- =========================================================================
        CANONICAL UTM & XCOD CHECKOUT TRACKING PROPAGATION SCRIPT
@@ -2370,6 +2441,7 @@
         propagateTracking();
       }
       window.addEventListener('load', propagateTracking);
+      window.propagateTrackingToButtons = propagateTracking;
 
       document.addEventListener('click', function(e) {
         var btn = e.target.closest('a[data-utmify-checkout="true"], a[href*="hotmart.com"]');
