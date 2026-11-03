@@ -751,9 +751,34 @@
       justify-content: space-between;
       position: relative;
     }
-    .pricing-card.featured {
-      border: 3px solid var(--brand-primary);
-      box-shadow: 0 16px 40px rgba(124, 58, 237, 0.2);
+        .pricing-card.featured {
+      background: linear-gradient(165deg, #1E0B36 0%, #3B0764 40%, #581C87 100%);
+      border: 2px solid #A855F7;
+      box-shadow: 0 20px 50px rgba(124, 58, 237, 0.35), 0 0 0 1px rgba(168, 85, 247, 0.4);
+      color: #FFFFFF;
+      position: relative;
+    }
+    .pricing-card.featured h3 {
+      color: #FFFFFF !important;
+    }
+    .pricing-card.featured .popular-pill {
+      background: #F59E0B;
+      color: #18181B;
+      font-weight: 900;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+    .pricing-card.featured .price-amount {
+      color: #4ADE80;
+    }
+    .pricing-card.featured .price-crossed {
+      color: #C4B5FD;
+    }
+    .pricing-card.featured .pricing-bullets li {
+      color: #F3F4F6;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .pricing-card.featured .pricing-bullets li span {
+      color: #4ADE80;
     }
     .popular-pill {
       position: absolute;
@@ -822,30 +847,6 @@
       height: 220px;
       object-fit: contain;
       flex-shrink: 0;
-    }
-
-    /* SECTION 17: ORDER BUMPS SHOWCASE */
-    .bumps-section {
-      padding: 80px 0;
-      background: var(--bg-page);
-    }
-    .bumps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-    .bump-item-card {
-      background: #FFFFFF;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border-light);
-      box-shadow: var(--shadow-sm);
-    }
-    .bump-item-card img {
-      width: 100%;
-      height: auto;
-      display: block;
     }
 
     /* SECTION 18: FAQ ACCORDION */
@@ -1450,17 +1451,17 @@
       <!-- ROW 2 (Scrolls Right) -->
       <div class="marquee-row marquee-row-right">
         <div class="marquee-row-track">
-          <div class="sheet-card"><img src="assets/bump-subjunctive-flowcharts.webp" alt="Subjunctive Flowcharts" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Flowchart Drills</span></div>
-          <div class="sheet-card"><img src="assets/bump-slang-idioms.webp" alt="Slang & Idioms" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Street Slang</span></div>
-          <div class="sheet-card"><img src="assets/bump-audio-pronunciation.webp" alt="Audio Pronunciation" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Native Audio Guide</span></div>
-          <div class="sheet-card"><img src="assets/bump-fluency-workbook.webp" alt="Fluency Workbook" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Fluency Drills</span></div>
+          <div class="sheet-card"><img src="assets/sample-verb-tree.webp" alt="Subjunctive Flowcharts" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Flowchart Drills</span></div>
+          <div class="sheet-card"><img src="assets/sample-por-vs-para.webp" alt="Slang & Idioms" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Street Slang</span></div>
+          <div class="sheet-card"><img src="assets/sample-ser-vs-estar.webp" alt="Audio Pronunciation" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Native Audio Guide</span></div>
+          <div class="sheet-card"><img src="assets/sample-weirdo-subjunctive.webp" alt="Fluency Workbook" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Fluency Drills</span></div>
           <div class="sheet-card"><img src="assets/sample-restaurant-travel.webp" alt="Travel Map" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Travel Phrases</span></div>
           <div class="sheet-card"><img src="assets/sample-weirdo-subjunctive.webp" alt="Subjunctive Map" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Decision Trees</span></div>
           <!-- Loop duplicate -->
-          <div class="sheet-card"><img src="assets/bump-subjunctive-flowcharts.webp" alt="Subjunctive Flowcharts" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Flowchart Drills</span></div>
-          <div class="sheet-card"><img src="assets/bump-slang-idioms.webp" alt="Slang & Idioms" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Street Slang</span></div>
-          <div class="sheet-card"><img src="assets/bump-audio-pronunciation.webp" alt="Audio Pronunciation" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Native Audio Guide</span></div>
-          <div class="sheet-card"><img src="assets/bump-fluency-workbook.webp" alt="Fluency Workbook" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Fluency Drills</span></div>
+          <div class="sheet-card"><img src="assets/sample-verb-tree.webp" alt="Subjunctive Flowcharts" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Flowchart Drills</span></div>
+          <div class="sheet-card"><img src="assets/sample-por-vs-para.webp" alt="Slang & Idioms" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Street Slang</span></div>
+          <div class="sheet-card"><img src="assets/sample-ser-vs-estar.webp" alt="Audio Pronunciation" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Native Audio Guide</span></div>
+          <div class="sheet-card"><img src="assets/sample-weirdo-subjunctive.webp" alt="Fluency Workbook" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Fluency Drills</span></div>
           <div class="sheet-card"><img src="assets/sample-restaurant-travel.webp" alt="Travel Map" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Travel Phrases</span></div>
           <div class="sheet-card"><img src="assets/sample-weirdo-subjunctive.webp" alt="Subjunctive Map" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Decision Trees</span></div>
         </div>
@@ -1473,15 +1474,15 @@
           <div class="sheet-card"><img src="assets/sample-verb-tree.webp" alt="Verb Navigator" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Irregular Verbs</span></div>
           <div class="sheet-card"><img src="assets/sample-connectors.webp" alt="Speed Connectors" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Sentence Starters</span></div>
           <div class="sheet-card"><img src="assets/sample-por-vs-para.webp" alt="Por vs Para" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Goal vs Reason</span></div>
-          <div class="sheet-card"><img src="assets/bump-ultimate-bundle.webp" alt="Complete Bundle" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Mastery Toolkit</span></div>
-          <div class="sheet-card"><img src="assets/bump-audio-pronunciation.webp" alt="Audio Navigator" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Accent Reduction</span></div>
+          <div class="sheet-card"><img src="assets/ugc-desk-binder.webp" alt="Complete Bundle" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Mastery Toolkit</span></div>
+          <div class="sheet-card"><img src="assets/sample-ser-vs-estar.webp" alt="Audio Navigator" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Accent Reduction</span></div>
           <!-- Loop duplicate -->
           <div class="sheet-card"><img src="assets/sample-ser-vs-estar.webp" alt="Ser vs Estar Mindmap" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Ser vs. Estar Rule</span></div>
           <div class="sheet-card"><img src="assets/sample-verb-tree.webp" alt="Verb Navigator" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Irregular Verbs</span></div>
           <div class="sheet-card"><img src="assets/sample-connectors.webp" alt="Speed Connectors" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Sentence Starters</span></div>
           <div class="sheet-card"><img src="assets/sample-por-vs-para.webp" alt="Por vs Para" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Goal vs Reason</span></div>
-          <div class="sheet-card"><img src="assets/bump-ultimate-bundle.webp" alt="Complete Bundle" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Mastery Toolkit</span></div>
-          <div class="sheet-card"><img src="assets/bump-audio-pronunciation.webp" alt="Audio Navigator" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Accent Reduction</span></div>
+          <div class="sheet-card"><img src="assets/ugc-desk-binder.webp" alt="Complete Bundle" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Mastery Toolkit</span></div>
+          <div class="sheet-card"><img src="assets/sample-ser-vs-estar.webp" alt="Audio Navigator" width="220" height="290" loading="lazy" decoding="async"><span class="sheet-label">Accent Reduction</span></div>
         </div>
       </div>
     </div>
@@ -1679,35 +1680,40 @@
         <p class="section-subtitle">Order today to receive these 5 high-value companion guides included at zero extra charge with your one-time purchase:</p>
       </div>
 
-      <div class="bonus-grid">
+            <div class="bonus-grid">
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #1</span>
-          <h3 style="font-size: 1.15rem; margin-top: 8px; margin-bottom: 8px;">The Pocket Spanish Travel Cheat Sheet</h3>
+          <div style="font-size: 2.2rem; margin: 12px 0 8px;">✈️</div>
+          <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">The Pocket Spanish Travel Cheat Sheet</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Printable credit-card sized cheat sheet for your passport wallet. Essential phrases for airport, taxi, and hotel check-in. ($19 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #2</span>
-          <h3 style="font-size: 1.15rem; margin-top: 8px; margin-bottom: 8px;">The 50 Most Dangerous False Friends</h3>
+          <div style="font-size: 2.2rem; margin: 12px 0 8px;">⚠️</div>
+          <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">The 50 Most Dangerous False Friends</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Never say you are "embarazada" (pregnant) when you mean embarrassed. Avoid humiliating slip-ups with native precision. ($17 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #3</span>
-          <h3 style="font-size: 1.15rem; margin-top: 8px; margin-bottom: 8px;">Native Rolling 'RR' & Accent Audio Guide</h3>
+          <div style="font-size: 2.2rem; margin: 12px 0 8px;">🎙️</div>
+          <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">Native Rolling 'RR' & Accent Audio Guide</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Mouth-position diagrams and phonetic drills to master the Spanish rolled 'R' and sound crisp and natural. ($24 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #4</span>
-          <h3 style="font-size: 1.15rem; margin-top: 8px; margin-bottom: 8px;">Job Site & Everyday Workplace Spanish</h3>
+          <div style="font-size: 2.2rem; margin: 12px 0 8px;">🏗️</div>
+          <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">Job Site & Everyday Workplace Spanish</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Direct commands, safety protocols, and daily workplace dialogue for supervisors, contractors, and managers. ($29 Value)</p>
         </div>
 
         <div class="bonus-card">
           <span class="bonus-pill">FREE BONUS #5</span>
-          <h3 style="font-size: 1.15rem; margin-top: 8px; margin-bottom: 8px;">Lifetime Access & Free Updates</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Never pay a monthly subscription. Any new visual mindmaps added to the collection in the future are yours 100% free. ($47 Value)</p>
+          <div style="font-size: 2.2rem; margin: 12px 0 8px;">♾️</div>
+          <h3 style="font-size: 1.15rem; margin-top: 4px; margin-bottom: 8px;">Lifetime Access & Free Updates</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Never pay a monthly subscription. Any new visual mindmaps added to the collection are yours free forever. ($47 Value)</p>
         </div>
       </div>
     </div>
@@ -1874,14 +1880,14 @@
         <div class="pricing-card featured">
           <span class="popular-pill">★ MOST POPULAR · 94% CHOOSE THIS ★</span>
           <div>
-            <h3 style="font-size: 1.5rem; color: var(--brand-primary); margin-top: 10px;">Complete Mastery Kit</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">The Entire 300 Mindmaps + All 5 Bonuses</p>
+            <h3 style="font-size: 1.5rem; color: #FFFFFF; margin-top: 12px; font-weight: 900;">Complete Mastery Kit</h3>
+            <p style="color: #E9D5FF; font-size: 0.95rem; margin-top: 4px;">The Entire 300 Mindmaps + All 5 Bonuses</p>
             <div class="price-amount"><span class="price-crossed">$97</span>$27.00</div>
-            <p style="font-size: 0.8rem; color: #10B981; font-weight: 700;">70% OFF Launch Discount Applied</p>
+            <p style="font-size: 0.8rem; color: #4ADE80; font-weight: 800; letter-spacing: 0.5px;">✓ 70% OFF Launch Discount Applied</p>
           </div>
 
           <div style="text-align: center; margin: 18px 0;">
-            <img src="assets/mockup-plan-premium.webp" alt="Complete Visual Spanish Mastery 300 Mindmaps Bundle" width="280" height="280" loading="lazy" decoding="async" style="border-radius: 14px; max-width: 100%; height: auto; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);">
+            <img src="assets/hero-mockup-3d.webp" alt="Complete Visual Spanish Mastery 300 Mindmaps Bundle" width="360" height="270" loading="lazy" decoding="async" style="border-radius: 16px; max-width: 100%; height: auto; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.15);">
           </div>
 
           <ul class="pricing-bullets">
@@ -1920,37 +1926,6 @@
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
             Download the 300 mindmaps, put them on your iPad, or print out your favorite sheets. If you don't feel noticeably more confident in your ability to speak and understand real conversational Spanish, just send us a quick email within 7 days and we will refund every penny immediately. No questions asked.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       SECTION 17: ORDER BUMPS SHOWCASE
-       ========================================================================= -->
-  <section class="bumps-section">
-    <div class="container">
-      <div style="text-align: center;">
-        <span class="section-eyebrow">Available at Checkout</span>
-        <h2 class="section-title">Supercharge Your Fluency at Checkout</h2>
-        <p class="section-subtitle">You will have the option to add these optional companion accelerators to your order on the checkout page:</p>
-      </div>
-
-      <div class="bumps-grid">
-        <div class="bump-item-card">
-          <img src="assets/bump-audio-pronunciation.webp" alt="Native Spanish Audio Masterclass" width="800" height="540" loading="lazy" decoding="async">
-        </div>
-        <div class="bump-item-card">
-          <img src="assets/bump-subjunctive-flowcharts.webp" alt="The Visual Subjunctive Decoded" width="800" height="540" loading="lazy" decoding="async">
-        </div>
-        <div class="bump-item-card">
-          <img src="assets/bump-slang-idioms.webp" alt="Real World Slang and Idioms" width="800" height="540" loading="lazy" decoding="async">
-        </div>
-        <div class="bump-item-card">
-          <img src="assets/bump-fluency-workbook.webp" alt="30 Day Conversational Fluency Workbook" width="800" height="540" loading="lazy" decoding="async">
-        </div>
-        <div class="bump-item-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
-          <img src="assets/bump-ultimate-bundle.webp" alt="The Ultimate All-in-One Mastery Bundle" width="800" height="540" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -2082,7 +2057,7 @@
        SECTION 22: LIVE PURCHASE TOAST NOTIFICATION
        ========================================================================= -->
   <div id="live-toast" class="live-toast">
-    <div class="toast-avatar" id="toast-avatar">DT</div>
+    <div class="toast-avatar" id="toast-avatar" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: #FFFFFF; font-size: 1.35rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; width: 42px; height: 42px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);">🛍️</div>
     <div class="toast-info">
       <div><span class="toast-name" id="toast-name">Dave T. (San Antonio, TX)</span></div>
       <div style="color: var(--text-muted); font-size: 0.8rem;" id="toast-desc">just ordered the <strong>Complete Mastery Kit</strong></div>
@@ -2130,13 +2105,13 @@
 
     // 5. Live Purchase Toast Rotation
     const recentBuyers = [
-      { name: "Dave T. (San Antonio, TX)", photo: "assets/avatar-dave.webp", pkg: "Complete Mastery Kit", time: "2 minutes ago" },
-      { name: "Sarah L. (Denver, CO)", photo: "assets/avatar-sarah.webp", pkg: "Complete Mastery Kit + Audio", time: "4 minutes ago" },
-      { name: "Robert M. (San Diego, CA)", photo: "assets/avatar-dave.webp", pkg: "Complete Mastery Kit", time: "7 minutes ago" },
-      { name: "Mark W. (Phoenix, AZ)", photo: "assets/avatar-mark.webp", pkg: "Ultimate All-in-One Bundle", time: "11 minutes ago" },
-      { name: "Lisa R. (Miami, FL)", photo: "assets/avatar-lisa.webp", pkg: "Complete Mastery Kit", time: "15 minutes ago" },
-      { name: "Carlos G. (Austin, TX)", photo: "assets/avatar-mark.webp", pkg: "Complete Mastery Kit", time: "18 minutes ago" },
-      { name: "Jennifer K. (Chicago, IL)", photo: "assets/avatar-lisa.webp", pkg: "Starter Fast-Track", time: "22 minutes ago" }
+      { name: "Dave T. (San Antonio, TX)", pkg: "Complete Mastery Kit", time: "2 minutes ago" },
+      { name: "Sarah L. (Denver, CO)", pkg: "Complete Mastery Kit + Audio", time: "4 minutes ago" },
+      { name: "Robert M. (San Diego, CA)", pkg: "Complete Mastery Kit", time: "7 minutes ago" },
+      { name: "Mark W. (Phoenix, AZ)", pkg: "Ultimate All-in-One Bundle", time: "11 minutes ago" },
+      { name: "Lisa R. (Miami, FL)", pkg: "Complete Mastery Kit", time: "15 minutes ago" },
+      { name: "Carlos G. (Austin, TX)", pkg: "Complete Mastery Kit", time: "18 minutes ago" },
+      { name: "Jennifer K. (Chicago, IL)", pkg: "Starter Fast-Track", time: "22 minutes ago" }
     ];
 
     let buyerIndex = 0;
@@ -2149,7 +2124,7 @@
     let remainingStock = 9;
     function showNextToast() {
       const buyer = recentBuyers[buyerIndex];
-      toastAvatar.innerHTML = `<img src="${buyer.photo}" alt="${buyer.name}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+      toastAvatar.textContent = "🛍️";
       toastName.textContent = buyer.name;
       toastDesc.innerHTML = `just ordered the <strong>${buyer.pkg}</strong>`;
       toastTime.innerHTML = `✓ Verified Student · ${buyer.time} · <span style="color: #DC2626; font-weight: 700;">🔥 Only ${remainingStock} launch kits left</span>`;
