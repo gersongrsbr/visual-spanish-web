@@ -1203,6 +1203,180 @@
       }
     }
 
+  
+    /* =========================================================================
+       1-CLICK MOBILE UPSELL MODAL (ZERO-SCROLL OPTIMIZED)
+       ========================================================================= */
+    .upsell-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .upsell-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .upsell-modal-card {
+      background: linear-gradient(170deg, #1E0B36 0%, #2E0854 45%, #4C1D95 100%);
+      border: 2px solid #A855F7;
+      border-radius: 20px;
+      max-width: 440px;
+      width: 100%;
+      padding: 22px 18px 18px;
+      color: #FFFFFF;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.35);
+      position: relative;
+      transform: scale(0.92);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+    .upsell-modal-overlay.active .upsell-modal-card {
+      transform: scale(1);
+    }
+    .upsell-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #E9D5FF;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .upsell-close-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+    .upsell-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #F59E0B;
+      color: #18181B;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+    .upsell-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 10px 0 6px;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .upsell-sub {
+      font-size: 0.85rem;
+      color: #E9D5FF;
+      text-align: center;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .upsell-value-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .upsell-value-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .upsell-value-row:last-child {
+      border-bottom: none;
+    }
+    .upsell-value-row .label {
+      color: #DDD6FE;
+    }
+    .upsell-value-row .val {
+      font-weight: 800;
+      color: #4ADE80;
+    }
+    .upsell-price-banner {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      border-radius: 12px;
+      padding: 8px 12px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .upsell-price-banner .calc {
+      font-size: 0.8rem;
+      color: #E9D5FF;
+    }
+    .upsell-price-banner .total {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #4ADE80;
+      margin-top: 2px;
+    }
+    .btn-upsell-yes {
+      display: block;
+      width: 100%;
+      background: #16A34A;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1rem;
+      text-align: center;
+      padding: 14px 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(22, 163, 74, 0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 10px;
+      letter-spacing: 0.3px;
+    }
+    .btn-upsell-yes:hover {
+      background: #15803D;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.6);
+      color: #FFFFFF;
+    }
+    .btn-upsell-skip {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #C4B5FD;
+      font-size: 0.78rem;
+      text-align: center;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 6px 0;
+      transition: color 0.2s;
+    }
+    .btn-upsell-skip:hover {
+      color: #FFFFFF;
+    }
+
   </style>
 </head>
 <body>
@@ -1732,13 +1906,13 @@
 
       <div class="whatsapp-grid">
         <div class="phone-card">
-          <img src="assets/whatsapp-chat-1.webp" alt="WhatsApp feedback from Robert M. in Ensenada" width="414" height="740" loading="lazy" decoding="async">
+          <img src="assets/whatsapp-chat-v2-1.webp" alt="WhatsApp feedback from Robert M. in Ensenada" width="414" height="740" loading="lazy" decoding="async">
         </div>
         <div class="phone-card">
-          <img src="assets/whatsapp-chat-2.webp" alt="WhatsApp feedback from Dave T. in San Antonio" width="414" height="740" loading="lazy" decoding="async">
+          <img src="assets/whatsapp-chat-v2-2.webp" alt="WhatsApp feedback from Dave T. in San Antonio" width="414" height="740" loading="lazy" decoding="async">
         </div>
         <div class="phone-card">
-          <img src="assets/whatsapp-chat-3.webp" alt="WhatsApp feedback from Sarah L. in Costa Rica" width="414" height="740" loading="lazy" decoding="async">
+          <img src="assets/whatsapp-chat-v2-3.webp" alt="WhatsApp feedback from Sarah L. in Costa Rica" width="414" height="740" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1871,7 +2045,7 @@
             <li><span style="color: #9CA3AF;">❌ Intermediate & Subjunctive Maps</span></li>
           </ul>
 
-          <a href="https://pay.hotmart.com/YOUR_BASIC_CODE?checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn-cta" style="background: #4B5563; max-width: 100%;">
+          <a href="https://pay.hotmart.com/C108319785M?off=hpu7z3p2&checkoutMode=10" onclick="openUpsellModal(event)" target="_self" data-utmify-checkout="true" class="btn-cta" style="background: #4B5563; max-width: 100%;">
             Get Starter Fast-Track ($14.90)
           </a>
         </div>
@@ -1902,7 +2076,7 @@
             <li><span>✔</span> <strong>100% Risk-Free:</strong> 7-Day Money-Back Guarantee</li>
           </ul>
 
-          <a href="https://pay.hotmart.com/YOUR_PREMIUM_CODE?checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn-cta" style="max-width: 100%;">
+          <a href="https://pay.hotmart.com/M108285551M?off=yoozbdeh&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn-cta" style="max-width: 100%;">
             GET COMPLETE ACCESS FOR $27 →
           </a>
         </div>
@@ -2205,5 +2379,51 @@
       });
     })();
   </script>
+
+  <!-- =========================================================================
+       1-CLICK MOBILE UPSELL POP-UP MODAL (NO SCROLL REQUIRED)
+       ========================================================================= -->
+  <div id="upsell-modal" class="upsell-modal-overlay" onclick="handleModalOverlayClick(event)">
+    <div class="upsell-modal-card" onclick="event.stopPropagation()">
+      <button class="upsell-close-btn" onclick="closeUpsellModal(true)" aria-label="Close">✕</button>
+      <div style="text-align: center;">
+        <span class="upsell-badge-pill">⚡ SPECIAL 1-CLICK UPGRADE</span>
+      </div>
+      <h3 class="upsell-title">Unlock All 300 Mindmaps for Just $12.10 More!</h3>
+      <p class="upsell-sub">You selected Starter (75 mindmaps). Upgrade right now to get 4X more content + all 5 bonuses before checkout:</p>
+
+      <div class="upsell-value-box">
+        <div class="upsell-value-row">
+          <span class="label">📚 Total Visual Mindmaps</span>
+          <span class="val">300 Maps (A1 to B2)</span>
+        </div>
+        <div class="upsell-value-row">
+          <span class="label">⏳ Past & Future Verbs Navigator</span>
+          <span class="val">Included</span>
+        </div>
+        <div class="upsell-value-row">
+          <span class="label">🌀 WEIRDO Subjunctive Flowcharts</span>
+          <span class="val">Included</span>
+        </div>
+        <div class="upsell-value-row">
+          <span class="label">🎁 All 5 Audio & Guide Bonuses ($136 Value)</span>
+          <span class="val">100% FREE</span>
+        </div>
+      </div>
+
+      <div class="upsell-price-banner">
+        <div class="calc">Just $12.10 difference (Save $70 Launch Discount)</div>
+        <div class="total">$27.00 ONE-TIME</div>
+      </div>
+
+      <a id="modal-upgrade-link" href="https://pay.hotmart.com/M108285551M?off=yoozbdeh&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn-upsell-yes">
+        YES! UPGRADE TO COMPLETE MASTERY ($27) →
+      </a>
+      <a id="modal-skip-link" href="https://pay.hotmart.com/C108319785M?off=hpu7z3p2&checkoutMode=10" target="_self" data-utmify-checkout="true" class="btn-upsell-skip">
+        No thanks, proceed with Starter Fast-Track for $14.90 ›
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
